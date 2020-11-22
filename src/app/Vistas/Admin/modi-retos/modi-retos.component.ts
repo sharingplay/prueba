@@ -19,20 +19,28 @@ export class ModiRetosComponent implements OnInit {
     this.messengerService.message.subscribe(value => {this.reto = value; });
   }
   modificar(): void{
+    let bool = true;
+    if ((document.getElementById('privacidad') as HTMLInputElement).value === 'true'){
+      bool = true;
+    }
+    else{
+      bool = false;
+    }
+    console.log(this.admin);
     const reto = {
-      Idreto: this.reto.Idreto,
+      Idreto: this.reto.idReto,
       Idorganizador: this.admin.idusuario,
       Nombrereto: (document.getElementById('name') as HTMLInputElement).value,
-      Objetivoreto: (document.getElementById('cuenta') as HTMLInputElement).value,
+      Objetivoreto: (document.getElementById('objetivo') as HTMLInputElement).value,
       Fechainicio: (document.getElementById('inicioDate') as HTMLInputElement).value,
       Fechafinaliza: (document.getElementById('finaldate') as HTMLInputElement).value,
       Tipoactividad: (document.getElementById('tipo') as HTMLInputElement).value,
       Tiporeto: (document.getElementById('Reto') as HTMLInputElement).value,
-      Privada: (document.getElementById('privacidad') as HTMLInputElement).value
+      Privada: bool
     };
     this.httpService.post('http://localhost/APIStraviaTec/Retos/updateReto',
       reto).subscribe(
-      (resp: HttpResponse<any>) => { this.reto = resp; console.log(resp); });
+      (resp: HttpResponse<any>) => { console.log(resp); alert('Reto modificado correctamente')});
   }
   ngOnInit(): void {
   }

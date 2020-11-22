@@ -16,7 +16,7 @@ export class AdmiretosComponent implements OnInit {
   constructor(public httpService: HttpClient, private router: Router, private messengerService: MessengerService,
               @Inject(MessengerService) public recibido: MessengerService['usuario']) {
     this.admin = recibido.usuario;
-    this.httpService.post('http://localhost/APIStraviaTec/Retos/retosPorUsuario',
+    this.httpService.post('http://localhost/APIStraviaTec/Retos/retosPorAdmin',
       { Idusuario: this.admin.idusuario}).subscribe(
       (resp: HttpResponse<any>) => { this.retos = resp; console.log(resp); });
   }
@@ -28,7 +28,7 @@ export class AdmiretosComponent implements OnInit {
   eliminar(reto: any): void{
     this.httpService.post('http://localhost/APIStraviaTec/Retos/deleteReto',
       { Idreto: reto.idReto}).subscribe(
-      (resp: HttpResponse<any>) => { reto = resp; console.log(resp); });
+      (resp: HttpResponse<any>) => { alert('Se eliminó ' + reto.nombreReto); console.log(resp); });
   }
   ngOnInit(): void {
   }

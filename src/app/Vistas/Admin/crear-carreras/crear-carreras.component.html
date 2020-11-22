@@ -98,7 +98,7 @@
     <div class="form-group">
       <label for="recorrido" class="col-sm-3 control-label">Recorrido*</label>
       <div class="col-sm-9">
-        <input type="text" id="recorrido" placeholder="Recorrido" class="form-control" autofocus>
+        <input type="file" accept=".gpx" (change)="nuevoRecorrido()" id="recorrido" name="file" required="required">
       </div>
     </div>
     <div class="form-group">
@@ -118,8 +118,8 @@
       <label for="Carrera" class="col-sm-3 control-label">Carrera</label>
       <div class="col-sm-9">
         <select class="form-control" id="Carrera" name="platform" required="required">
-          <option value="Fondo">Publico</option>
-          <option value="Altitud">Grupos</option>
+          <option value="false">Publico</option>
+          <option value="true">Grupos</option>
         </select>
       </div>
     </div>
@@ -127,7 +127,7 @@
     <div class="form-group">
       <label for="costo" class="col-sm-3 control-label">Costo*</label>
       <div class="col-sm-9">
-        <input type="text" id="costo" placeholder="costo" class="form-control" autofocus>
+        <input type="number" id="costo" placeholder="costo" class="form-control" autofocus>
       </div>
     </div>
 
@@ -175,7 +175,7 @@
         <span class="help-block">*Requisitos obligatorios</span>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary btn-block" >Registrar</button>
+    <button type="submit" (click)="crear()" class="btn btn-primary btn-block" >Registrar</button>
   </form> <!-- /form -->
 </div> <!-- ./container -->
 </body>

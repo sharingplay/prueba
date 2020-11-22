@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="informations-container">
-        <h2 class="title">{{reto.nombreCarrera}}</h2>
+        <h2 class="title">{{reto.nombreReto}}</h2>
         <p class="sub-title">{{reto.objetivo}}</p>
         <p class="sub-title">{{reto.tipoActividad}}</p>
         <p class="sub-title">{{reto.tipoReto}}</p>
@@ -31,7 +31,7 @@
             </div>
           </div>
           <div class="footer">
-            <a routerLink="modiRetos" (click)="modificar(reto)" class="Cbtn Cbtn-primary">Modificar</a>
+            <a routerLink="/modiRetos" (click)="modificar(reto)" class="Cbtn Cbtn-primary">Modificar</a>
             <a  (click)="eliminar(reto)" class="Cbtn Cbtn-danger">Eliminar</a>
           </div>
         </div>

@@ -23,7 +23,7 @@
               </thead>
               <tbody>
               <tr *ngFor="let athlete of junior">
-                <td>{{athlete.primernombre + ' ' + athlete.apellidos}}</td>
+                <td>{{athlete.nombre}}</td>
                 <td>{{athlete.edad}}</td>
               </tr>
               </tbody>
@@ -57,7 +57,7 @@
               </thead>
               <tbody>
               <tr *ngFor="let athlete of open">
-                <td>{{athlete.primernombre + ' ' + athlete.apellidos}}</td>
+                <td>{{athlete.nombre}}</td>
                 <td>{{athlete.edad}}</td>
               </tr>
               </tbody>
@@ -74,7 +74,7 @@
               </thead>
               <tbody>
               <tr *ngFor="let athlete of masterA">
-                <td>{{athlete.primernombre + ' ' + athlete.apellidos}}</td>
+                <td>{{athlete.nombre}}</td>
                 <td>{{athlete.edad}}</td>
               </tr>
               </tbody>
@@ -91,7 +91,7 @@
               </thead>
               <tbody>
               <tr *ngFor="let athlete of masterB">
-                <td>{{athlete.primernombre + ' ' + athlete.apellidos}}</td>
+                <td>{{athlete.nombre}}</td>
                 <td>{{athlete.edad}}</td>
               </tr>
               </tbody>
@@ -125,7 +125,7 @@
               </thead>
               <tbody>
               <tr *ngFor="let athlete of Elite">
-                <td>{{athlete.primernombre + ' ' + athlete.apellidos}}</td>
+                <td>{{athlete.nombre}}</td>
                 <td>{{athlete.edad}}</td>
               </tr>
               </tbody>
@@ -143,21 +143,19 @@
     <div class="container FixedHeightContainer outer" id="posiciones">
       <div class="row Content scrollbar-light-blue inner">
         <h1>Orden descendente</h1>
-        <table class="table table-striped text-white table-hover " id="tiempos">
+        <table class="table table-striped text-white table-hover totalWidth" id="tiempos">
           <thead>
           <tr>
+            <th>Posición</th>
             <th>Nombre</th>
             <th>Edad</th>
-            <th>Tiempo</th>
-            <th>Categoria</th>
           </tr>
           </thead>
           <tbody>
           <tr *ngFor="let athlete of porTiempo; let i = index">
-            <td>{{athlete.nombre + ' ' + athlete.apellido}}</td>
+            <td>{{i}}</td>
+            <td>{{athlete.nombre}}</td>
             <td>{{athlete.edad}}</td>
-            <td>{{athlete.tiempo}}</td>
-            <td>{{athlete.categoria}}</td>
           </tr>
           </tbody>
         </table>
@@ -165,5 +163,6 @@
     </div>
   </div>
 </div>
+<app-home-footer></app-home-footer>
 </body>
 
