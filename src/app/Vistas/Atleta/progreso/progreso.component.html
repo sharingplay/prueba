@@ -1,0 +1,38 @@
+<app-home-header></app-home-header>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-xl-3 col-lg-6 mb-4" *ngFor="let reto of retos">
+      <div class="bg-white rounded-lg p-5 shadow">
+        <h2 class="h6 font-weight-bold text-center mb-4">{{reto.nombreReto}}</h2>
+
+        <!-- Progress bar 1 -->
+        <div class="progress" data-percentage="{{porcentaje(reto)}}">
+		      <span class="progress-left">
+			      <span class="progress-bar"></span>
+		      </span>
+          <span class="progress-right">
+			      <span class="progress-bar"></span>
+		      </span>
+          <div class="progress-value">
+            <div>
+              {{porcentaje(reto)}}<br>
+              <span>completed</span>
+            </div>
+          </div>
+        </div>
+        <!-- END -->
+
+        <!-- Demo info -->
+        <div class="row text-center mt-4">
+          <div class="col-6 border-right">
+            <div class="h4 font-weight-bold mb-0">{{fechas(reto)}}</div><span class="small text-gray">Dias Faltante</span>
+          </div>
+          <div class="col-6">
+            <div class="h4 font-weight-bold mb-0">{{reto.objetivo}}</div><span class="small text-gray">objetivo</span>
+          </div>
+        </div>
+        <!-- END -->
+      </div>
+    </div>
+  </div>
+</div>

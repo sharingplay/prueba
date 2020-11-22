@@ -1,0 +1,52 @@
+<app-home-header></app-home-header>
+<div class="grid-container">
+  <div class="left-column" style="padding-top: 40px">
+    <h1 style="padding-left: 20px">{{activity.nombreActividad}}</h1>
+    <app-map [xmlText]="activity.recorrido"></app-map>
+  </div>
+  <div class="right-column" style="padding-top: 55px">
+    <table class="table table-borderless" style="font-size: large">
+      <tbody>
+      <tr>
+        <th scope="row">Distancia:</th>
+        <td>{{distance}} Km</td>
+      </tr>
+      <tr>
+        <th scope="row">Hora inicial:</th>
+        <td>{{startTime}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Hora Final:</th>
+        <td>{{endTime}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Duración:</th>
+        <td>{{totalTime}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Velocidad promedio:</th>
+        <td>{{movingSpeed}} Km/h</td>
+      </tr>
+      <tr>
+        <th scope="row">Elevación mínima:</th>
+        <td>{{minElevation}} m</td>
+      </tr>
+      <tr>
+        <th scope="row">Elevación máxima:</th>
+        <td>{{maxElevation}} m</td>
+      </tr>
+      <tr>
+        <th scope="row">Ganancia de elevación:</th>
+        <td>{{elevationGain}} m</td>
+      </tr>
+      <tr>
+        <th scope="row">Pérdida de elevación:</th>
+        <td>{{elevationLoss}} m</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<app-home-footer></app-home-footer>
